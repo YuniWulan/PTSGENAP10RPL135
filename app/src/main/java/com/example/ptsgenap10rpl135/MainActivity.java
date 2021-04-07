@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (Email.equalsIgnoreCase("admin@gmail.com")&& Password.equalsIgnoreCase("12345")){
                     Toast.makeText(MainActivity.this, "Sukses Login", Toast.LENGTH_SHORT).show();
-                    Intent Intent = new Intent(MainActivity.this, MainActivity.class);
+                    Intent Intent = new Intent(MainActivity.this, menu.class);
                     startActivity(Intent);
             }else {
                     Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
