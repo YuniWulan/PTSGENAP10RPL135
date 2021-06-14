@@ -1,11 +1,18 @@
 package com.example.ptsgenap10rpl135;
 
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
+
+
 
 import java.util.ArrayList;
 
@@ -28,10 +35,12 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
     @Override
     public void onBindViewHolder(MahasiswaViewHolder holder, int position) {
         holder.txtNama.setText(dataList.get(position).getNama());
-        holder.txtNpm.setText(dataList.get(position).getNim());
+        holder.txtttl.setText(dataList.get(position).getTtl());
         holder.txtNoHp.setText(dataList.get(position).getNohp());
         holder.txtemail.setText(dataList.get(position).getEmail());
-        holder.txtttl.setText(dataList.get(position).getTtl());
+        holder.image.setImageResource(dataList.get(position).getMyimage());
+
+
     }
     @Override
     public int getItemCount() {
@@ -39,16 +48,23 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
     }
 
     public class MahasiswaViewHolder extends RecyclerView.ViewHolder{
-        private TextView txtNama, txtNpm, txtNoHp , txtemail, txtttl;
-
+        private TextView txtNama, txtttl, txtNoHp , txtemail;
+        private ImageView image;
         public MahasiswaViewHolder(View itemView) {
             super(itemView);
-            txtNama = (TextView) itemView.findViewById(R.id.txt_nama_mahasiswa);
-            txtNpm = (TextView) itemView.findViewById(R.id.txt_npm_mahasiswa);
-            txtNoHp = (TextView) itemView.findViewById(R.id.txt_nohp_mahasiswa);
-            txtemail = (TextView) itemView.findViewById(R.id.txtemail);
+            txtNama = (TextView) itemView.findViewById(R.id.txt_nama);
             txtttl =(TextView)itemView.findViewById(R.id.txtttl);
+            txtNoHp = (TextView) itemView.findViewById(R.id.txt_nohp);
+            txtemail = (TextView) itemView.findViewById(R.id.txtemail);
+            image = itemView.findViewById(R.id.imageview);
+
+
+
+
+            }
         }
     }
-}
+
+
+
 

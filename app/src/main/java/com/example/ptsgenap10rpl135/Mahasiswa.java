@@ -1,16 +1,17 @@
 package com.example.ptsgenap10rpl135;
 
 public class Mahasiswa {
-    private String nama, nim, nohp, email, ttl;
+    private String nama, nohp, email, ttl;
+    private Integer myimage;
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
-    public Mahasiswa(String nama, String nim, String nohp, String email, String ttl) {
+    public Mahasiswa(String nama, String nohp, String email, String ttl, int myimage) {
         this.nama = nama;
-        this.nim = nim;
         this.nohp = nohp;
         this.email = email;
         this.ttl = ttl;
+        this.myimage = myimage;
     }
     public String getTtl() { return ttl; }
 
@@ -24,14 +25,6 @@ public class Mahasiswa {
         this.nama = nama;
     }
 
-    public String getNim() {
-        return nim;
-    }
-
-    public void setNim(String nim) {
-        this.nim = nim;
-    }
-
     public String getNohp() {
         return nohp;
     }
@@ -39,4 +32,8 @@ public class Mahasiswa {
     public void setNohp(String nohp) {
         this.nohp = nohp;
     }
+
+    public Integer getMyimage() { return myimage; }
+
+    public void setMyimage(Integer myimage) { this.myimage = myimage; }
 }
